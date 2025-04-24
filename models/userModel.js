@@ -34,6 +34,12 @@ const userSchema= new mongoose.Schema({
         type:String,
         required:true
     },
+    profilePicture:{
+        type:String,
+        require:true,
+        default:'https://www.vectorstock.com/royalty-free-vector/avatar-photo-default-user-icon-picture-face-vector-48139643'
+        
+    },
     phone:{
         type:String,
         required:true
