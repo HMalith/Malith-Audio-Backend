@@ -13,7 +13,7 @@ export function registerUser(req,res){
     newUser.save().then(
         ()=>{
             res.json({
-                message:`${data.firstName} registered successfully`
+                message:"User registered successfully"
             })
         }
     ).catch(
@@ -42,12 +42,11 @@ export function loginUser(req,res){
                 if(isPAsswordCorrect){
 
                     const token=jwt.sign({
-                        id:user._id,
                         firstName:user.firstName,
                         lastName:user.lastName,
                         email:user.email,
                         role:user.role
-                    },(process.env.JWT_SECRET),{expiresIn:"300s"})
+                    },"Malja122")
                     res.json({message:"Login successfull",token:token})
                 }else{
                     res.json({message:"Password Incorrect"})
