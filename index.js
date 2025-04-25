@@ -11,6 +11,7 @@ import userRouter from "./routes/userRouter.js";
 import productRouter from "./routes/productRouter.js";
 import jwt from "jsonwebtoken";
 import { configDotenv } from "dotenv";
+import reviewRouter from "./routes/reviewRoutes.js";
 
 
 let app=express();
@@ -49,6 +50,7 @@ app.use((req,res,next)=>{
 
 app.use("/api/users",userRouter)
 app.use("/api/products",productRouter)
+app.use("/api/reviews",reviewRouter)
 
 const PORT=process.env.PORT || 7002
 app.listen(PORT,()=>{
